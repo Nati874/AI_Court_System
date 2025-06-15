@@ -1,0 +1,60 @@
+AI Court and Crime Management System - Project Repository Structure Guide
+==============================================================
+
+This guide explains the purpose of each directory and file in the repository to help understand where everything goes and how to collaborate efficiently.
+
+Project Root:
+-------------
+ai-court-system/
+│
+├── frontend/                     # Contains everything related to the user interface
+│   ├── index.html                # Main HTML file that loads the UI
+│   ├── styles/                   # Folder for all CSS styling
+│   │   └── main.css              # Core stylesheet for the site
+│   ├── scripts/                  # Frontend logic (JavaScript)
+│   │   └── app.js                # Handles UI behavior and frontend logic
+│   └── assets/                   # Static files like images, icons, fonts
+│       └── images/, icons/, etc.
+
+├── backend/                      # Python backend logic using Flask or FastAPI
+│   ├── app.py                    # Main app file to run the server
+│   ├── routes/                   # API endpoint definitions
+│   │   └── court_routes.py       # Routes related to court functionalities (cases, schedules)
+│   ├── services/                 # Business logic and services like bias detection or scheduling
+│   │   └── bias_detector.py      # Code for detecting judicial bias in cases
+│   ├── models/                   # Data models and Python classes
+│   │   └── case.py               # Represents a case object with fields and logic
+│   ├── utils/                    # Utility/helper functions (date formatting, validation)
+│   │   └── helpers.py
+│   └── requirements.txt          # List of Python packages to install (e.g., Flask, Pandas, Sklearn)
+
+├── ml_models/                    # AI/ML code and model files
+│   ├── training/                 # Notebooks used to train AI models
+│   │   ├── case_classifier.ipynb     # Classifies case types or urgency
+│   │   ├── bias_detection.ipynb      # Model to detect bias in legal outcomes
+│   │   └── pattern_analysis.ipynb    # Analyzes crime trends and patterns
+│   ├── trained/                  # Saved model files after training (.pkl or .joblib)
+│   │   ├── case_classifier.pkl
+│   │   └── bias_detector.pkl
+│   └── preprocessing/            # Scripts for cleaning and preparing data
+│       └── preprocess.py
+
+├── database/                     # Database schemas, data seeds, and connection logic
+│   ├── schema.sql                # SQL commands to create tables (cases, users, etc.)
+│   ├── seed.sql                  # Initial mock data to populate the database
+│   └── db_connection.py          # Script to connect backend app with SQL database
+
+├── docs/                         # Documentation, planning materials, and progress logs
+│   ├── system_architecture.png   # Diagram of system components and interactions
+│   ├── API_reference.md          # Technical API documentation for developers
+│   └── progress_log.md           # Notes, meeting minutes, and development timeline
+
+├── tests/                        # Unit and integration tests
+│   ├── test_backend.py           # Tests for backend routes and logic
+│   └── test_model_bias.py        # Tests for AI models and predictions
+
+├── .gitignore                    # Specifies which files/folders Git should ignore (e.g., cache, envs)
+├── README.md                     # Main overview of the project, setup instructions, team, and vision
+└── LICENSE (optional)            # Optional license file for open-source/public usage rights
+
+
